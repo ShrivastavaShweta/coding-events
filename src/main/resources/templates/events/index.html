@@ -15,11 +15,16 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Description</th>
         </tr>
     </thead>
-    <tr th:each="event : ${events}">
-        <td th:text="${event}"></td>
-    </tr>
+    <th:block>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.getKey()}"></td>
+            <td th:text="${event.getValue()}"></td>
+            <td th:replace="{fragments :: address}"></td>
+        </tr>
+    </th:block>
 </table>
 
 </body>
