@@ -7,10 +7,7 @@ import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
-public class EventCategory {
-    @Id
-    @GeneratedValue
-    private int id;
+public class EventCategory extends AbstractEntity {
 
     @Size(min=3, message="Name must be at least 3 characters long")
     private String name;
@@ -20,10 +17,6 @@ public class EventCategory {
     }
 
     public EventCategory(){}
-
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -38,18 +31,5 @@ public class EventCategory {
         return "EventCategory{" +
                 "name='" + name + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        EventCategory that = (EventCategory) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }
