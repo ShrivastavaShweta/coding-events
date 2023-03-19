@@ -26,7 +26,7 @@ public class EventController {
     private EventCategoryRepository eventCategoryRepository;
 
     @GetMapping
-    public String displayAllEvents(@RequestParam(required = false) Integer categoryId, Model model){
+    public String displayEvents(@RequestParam(required = false) Integer categoryId, Model model){
         if (categoryId == null){
             model.addAttribute("title", "All Events");
             model.addAttribute("events", eventRepository.findAll());
