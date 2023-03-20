@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+    <header th:replace="fragments :: header"></header>
+
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th th:text="${event.id}"></th>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <th th:text="${event.eventDetails.description}"></th>
+        </tr>
+        <tr>
+            <th>Contact Email</th>
+            <th th:text="${event.eventDetails.contactEmail}"></th>
+        </tr>
+    </table>
+
+</body>
+</html>
